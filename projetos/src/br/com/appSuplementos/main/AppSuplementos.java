@@ -1,4 +1,4 @@
-package br.com.appSuplementos;
+package br.com.appSuplementos.main;
 
 import br.com.appSuplementos.view.Interface;
 import br.com.appSuplementos.service.Estoque;

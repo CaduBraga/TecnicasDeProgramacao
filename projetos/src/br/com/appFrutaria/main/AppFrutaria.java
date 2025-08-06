@@ -1,4 +1,4 @@
-package br.com.appFrutaria;
+package br.com.appFrutaria.main;
 
 import br.com.appFrutaria.service.Estoque;
 import br.com.appFrutaria.view.Interface;

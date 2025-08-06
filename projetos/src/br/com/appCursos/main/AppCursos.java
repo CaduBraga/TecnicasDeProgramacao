@@ -1,4 +1,4 @@
-package br.com.appCursos;
+package br.com.appCursos.main;
 
 import br.com.appCursos.service.Estoque;
 import br.com.appCursos.view.Interface;

@@ -2,6 +2,8 @@ package br.com.appFrutaria.view;
 
 import br.com.appFrutaria.model.Produto;
 import br.com.appFrutaria.service.CarrinhoCompras;
+import br.com.appFrutaria.service.ValidacaoService;
+import br.com.appFrutaria.service.exceptions.*;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,97 +23,102 @@ public class InterfaceCompra {
     }
 
     public int menuCarrinho() {
-        System.out.println("+--------------------------------------------------------------+");
-        System.out.println("|                    CARRINHO DE COMPRAS                       |");
-        System.out.println("+--------------------------------------------------------------+");
-        System.out.println("|  O que você deseja fazer?                                    |");
-        System.out.println("|                                                              |");
-        System.out.println("|  1 - Adicionar itens ao carrinho                             |");
-        System.out.println("|  2 - Remover produto do carrinho                             |");
-        System.out.println("|  3 - Ver carrinho                                            |");
-        System.out.println("|  4 - Finalizar compra                                        |");
-        System.out.println("|  5 - Voltar ao menu principal                                |");
-        System.out.println("+--------------------------------------------------------------+");
-        System.out.print("  Digite sua escolha: ");
-        int escolha = input.nextInt();
-        input.nextLine();
+        boolean entradaValida = false;
+        int escolha = 0;
+        
+        while (!entradaValida) {
+            try {
+                System.out.println("+--------------------------------------------------------------+");
+                System.out.println("|                    CARRINHO DE COMPRAS                       |");
+                System.out.println("+--------------------------------------------------------------+");
+                System.out.println("|  O que você deseja fazer?                                    |");
+                System.out.println("|                                                              |");
+                System.out.println("|  1 - Adicionar itens ao carrinho                             |");
+                System.out.println("|  2 - Remover produto do carrinho                             |");
+                System.out.println("|  3 - Ver carrinho                                            |");
+                System.out.println("|  4 - Finalizar compra                                        |");
+                System.out.println("|  5 - Voltar ao menu principal                                |");
+                System.out.println("+--------------------------------------------------------------+");
+                
+                escolha = ValidacaoService.validarOpcaoMenu(input, "  Digite sua escolha: ", 1, 5);
+                entradaValida = true;
+            } catch (EntradaInvalidaException e) {
+                System.out.println("\n" + e.getMessage());
+                System.out.println("Tente novamente.\n");
+            }
+        }
+        
         System.out.println();
         return escolha;
     }
 
     public void adicionarAoCarrinho(List<Produto> estoqueProdutos, CarrinhoCompras carrinho) {
-        if (estoqueProdutos.isEmpty()) {
-            System.out.println("+--------------------------------------------------------------+");
-            System.out.println("|                    ESTOQUE VAZIO                             |");
-            System.out.println("+--------------------------------------------------------------+");
-            System.out.println("|  Não há produtos disponíveis para comprar.                   |");
-            System.out.println("|  Adicione produtos ao estoque primeiro!                      |");
-            System.out.println("+--------------------------------------------------------------+");
-            return;
-        }
-        System.out.println("+--------------------------------------------------------------+");
-        System.out.println("|                    ADICIONAR AO CARRINHO                     |");
-        System.out.println("+--------------------------------------------------------------+");
-        System.out.println("    Produtos disponíveis:");
-        int produtosDisponiveis = 0;
-        for (int i = 0; i < estoqueProdutos.size(); i++) {
-            Produto p = estoqueProdutos.get(i);
-            if (p.getQuantidade() > 0) {
-                produtosDisponiveis++;
-                String produtoInfo = String.format("   %d - %s (Qtd: %d, Preço: R$ %.2f)",
-                        produtosDisponiveis, p.getNome(), p.getQuantidade(), p.getPreco());
-                System.out.println(produtoInfo);
+        try {
+            if (estoqueProdutos.isEmpty()) {
+                System.out.println("+--------------------------------------------------------------+");
+                System.out.println("|                    ESTOQUE VAZIO                             |");
+                System.out.println("+--------------------------------------------------------------+");
+                System.out.println("|  Não há produtos disponíveis para comprar.                   |");
+                System.out.println("|  Adicione produtos ao estoque primeiro!                      |");
+                System.out.println("+--------------------------------------------------------------+");
+                return;
             }
-        }
-        if (produtosDisponiveis == 0) {
-            System.out.println("   Nenhum produto disponível para compra no momento.");
             System.out.println("+--------------------------------------------------------------+");
-            return;
-        }
-        System.out.println("+--------------------------------------------------------------+");
-        System.out.print("  Escolha o produto (número): ");
-        int escolhaProduto = input.nextInt();
-        input.nextLine();
-        if (escolhaProduto < 1 || escolhaProduto > produtosDisponiveis) {
+            System.out.println("|                    ADICIONAR AO CARRINHO                     |");
             System.out.println("+--------------------------------------------------------------+");
-            System.out.println("|                    OPÇÃO INVÁLIDA                            |");
-            System.out.println("+--------------------------------------------------------------+");
-            System.out.println("   Por favor, escolha um número entre 1 e " + produtosDisponiveis);
-            System.out.println("+--------------------------------------------------------------+");
-            return;
-        }
-
-        Produto selecionado = null;
-        int contador = 0;
-        for (int i = 0; i < estoqueProdutos.size(); i++) {
-            Produto p = estoqueProdutos.get(i);
-            if (p.getQuantidade() > 0) {
-                contador++;
-                if (contador == escolhaProduto) {
-                    selecionado = p;
-                    break;
+            System.out.println("    Produtos disponíveis:");
+            int produtosDisponiveis = 0;
+            for (int i = 0; i < estoqueProdutos.size(); i++) {
+                Produto p = estoqueProdutos.get(i);
+                if (p.getQuantidade() > 0) {
+                    produtosDisponiveis++;
+                    String produtoInfo = String.format("   %d - %s (Qtd: %d, Preço: R$ %.2f)",
+                            produtosDisponiveis, p.getNome(), p.getQuantidade(), p.getPreco());
+                    System.out.println(produtoInfo);
                 }
             }
-        }
-        System.out.print("  Digite a quantidade que deseja comprar: ");
-        int qtd = input.nextInt();
-        input.nextLine();
-        if (qtd <= 0 || qtd > selecionado.getQuantidade()) {
+            if (produtosDisponiveis == 0) {
+                System.out.println("   Nenhum produto disponível para compra no momento.");
+                System.out.println("+--------------------------------------------------------------+");
+                return;
+            }
+            System.out.println("+--------------------------------------------------------------+");
+            int escolhaProduto = ValidacaoService.validarOpcaoMenu(input, "  Escolha o produto (número): ", 1, produtosDisponiveis);
+
+            Produto selecionado = null;
+            int contador = 0;
+            for (int i = 0; i < estoqueProdutos.size(); i++) {
+                Produto p = estoqueProdutos.get(i);
+                if (p.getQuantidade() > 0) {
+                    contador++;
+                    if (contador == escolhaProduto) {
+                        selecionado = p;
+                        break;
+                    }
+                }
+            }
+            int qtd = ValidacaoService.validarQuantidade(input, "  Digite a quantidade que deseja comprar: ", selecionado.getQuantidade());
+            carrinho.adicionarProduto(selecionado, qtd);
+            selecionado.setQuantidade(selecionado.getQuantidade() - qtd);
+            Produto.removerProdutos(qtd);
+            System.out.println("+--------------------------------------------------------------+");
+            System.out.println("|                    PRODUTO ADICIONADO                        |");
+            System.out.println("+--------------------------------------------------------------+");
+            System.out.println("   " + qtd + "x " + selecionado.getNome() + " adicionado ao carrinho!");
+            System.out.println("+--------------------------------------------------------------+");
+        } catch (EntradaInvalidaException e) {
+            System.out.println("+--------------------------------------------------------------+");
+            System.out.println("|                    ERRO NA ENTRADA                           |");
+            System.out.println("+--------------------------------------------------------------+");
+            System.out.println("   " + e.getMessage());
+            System.out.println("+--------------------------------------------------------------+");
+        } catch (EstoqueInsuficienteException e) {
             System.out.println("+--------------------------------------------------------------+");
             System.out.println("|                    QUANTIDADE INVÁLIDA                       |");
             System.out.println("+--------------------------------------------------------------+");
-            System.out.println("   Quantidade disponível: " + selecionado.getQuantidade());
+            System.out.println("   " + e.getMessage());
             System.out.println("+--------------------------------------------------------------+");
-            return;
         }
-        carrinho.adicionarProduto(selecionado, qtd);
-        selecionado.setQuantidade(selecionado.getQuantidade() - qtd);
-        Produto.removerProdutos(qtd);
-        System.out.println("+--------------------------------------------------------------+");
-        System.out.println("|                    PRODUTO ADICIONADO                        |");
-        System.out.println("+--------------------------------------------------------------+");
-        System.out.println("   " + qtd + "x " + selecionado.getNome() + " adicionado ao carrinho!");
-        System.out.println("+--------------------------------------------------------------+");
     }
 
     public void removerDoCarrinho(CarrinhoCompras carrinho) {

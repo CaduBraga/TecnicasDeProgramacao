@@ -1,4 +1,4 @@
-package br.com.appBiblioteca;
+package br.com.appBiblioteca.main;
 
 import br.com.appBiblioteca.service.Estoque;
 import br.com.appBiblioteca.view.Interface;

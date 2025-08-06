@@ -1,4 +1,4 @@
-package br.com.appFilmes;
+package br.com.appFilmes.main;
 
 import br.com.appFilmes.view.Interface;
 import br.com.appFilmes.service.Estoque;
