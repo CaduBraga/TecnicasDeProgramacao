@@ -1,6 +1,7 @@
 package br.com.appBiblioteca.view;
 
 import br.com.appBiblioteca.model.Livro;
+import br.com.appBiblioteca.service.*;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,54 +21,34 @@ public class Interface {
     }
 
     public static void mensagemInicial() {
-        System.out.println("=== Bem-vindo ao App Biblioteca ===");
-    }
-
-    public int menuPrincipal() {
-        System.out.println("--------------------------");
-        System.out.println("O que você deseja fazer?");
-        System.out.println("1 - Cadastrar livros");
-        System.out.println("2 - Ver livros");
-        System.out.println("3 - Remover livros");
-        System.out.println("4 - Editar livros");
-        System.out.println("5 - Iniciar compras");
-        System.out.println("6 - Relatório da biblioteca");
-        System.out.println("7 - Sair do programa");
-        System.out.println("Digite sua escolha abaixo:");
-        System.out.print("> ");
-        int escolha = input.nextInt();
-        input.nextLine();
-        System.out.println("--------------------------");
-        if (escolha < 1 || escolha > 7) {
-            System.out.println("\nOpção inválida, escolha um número de 1 a 7.");
-            return menuPrincipal();
-        }
-        return escolha;
+        System.out.println("=== BEM-VINDO AO SISTEMA DE GESTÃO DA BIBLIOTECA ===");
+        System.out.println();
     }
 
     public Livro cadastrar() {
-        System.out.print("Digite o nome do livro: ");
-        String nome = input.nextLine();
-        System.out.print("Digite o autor do livro: ");
-        String autor = input.nextLine();
-        System.out.print("Digite o gênero do livro: ");
-        String genero = input.nextLine();
-        System.out.print("Digite a editora do livro: ");
-        String editora = input.nextLine();
-        System.out.print("Digite a quantidade de páginas: ");
-        int paginas = input.nextInt();
-        input.nextLine();
-        System.out.print("Digite a quantidade em estoque: ");
-        int quantidade = input.nextInt();
-        input.nextLine();
-        System.out.print("Digite o preço do livro: ");
-        double preco = input.nextDouble();
-        input.nextLine();
-        Livro.adicionarLivros(quantidade);
-        Livro livro = new Livro(nome, autor, genero, editora, paginas, quantidade, preco);
-        System.out.println("Livro '" + nome + "' cadastrado com sucesso!");
-        System.out.println("Total de livros na biblioteca: " + Livro.getTotalLivros());
-        return livro;
+        try {
+            String nome = ValidacaoService.validarString(input, "Digite o nome do livro: ");
+            String autor = ValidacaoService.validarString(input, "Digite o autor do livro: ");
+            String genero = ValidacaoService.validarString(input, "Digite o gênero do livro: ");
+            String editora = ValidacaoService.validarString(input, "Digite a editora do livro: ");
+            int paginas = ValidacaoService.validarPaginas(input, "Digite a quantidade de páginas: ");
+            int quantidade = ValidacaoService.validarInteiro(input, "Digite a quantidade em estoque: ");
+            double preco = ValidacaoService.validarPreco(input, "Digite o preço do livro: ");
+            
+            if (quantidade < 0) {
+                System.out.println("Quantidade não pode ser negativa!");
+                return null;
+            }
+            
+            Livro.adicionarLivros(quantidade);
+            Livro livro = new Livro(nome, autor, genero, editora, paginas, quantidade, preco);
+            System.out.println("Livro '" + nome + "' cadastrado com sucesso!");
+            System.out.println("Total de livros na biblioteca: " + Livro.getTotalLivros());
+            return livro;
+        } catch (EntradaInvalidaException e) {
+            System.out.println("Erro na entrada: " + e.getMessage());
+            return null;
+        }
     }
 
     public void detalhar(List<Livro> estoqueLivro) {
