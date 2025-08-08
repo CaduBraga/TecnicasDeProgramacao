@@ -1,7 +1,7 @@
 package br.com.appBiblioteca.service;
 
 import br.com.appBiblioteca.model.Livro;
-import br.com.appBiblioteca.view.Interface;
+import br.com.appBiblioteca.view.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +30,7 @@ public class Estoque {
         int escolhaInicial = 0;
         CarrinhoCompras carrinho = new CarrinhoCompras();
         while (escolhaInicial != 7) {
-            escolhaInicial = tela.menuPrincipal();
+            escolhaInicial = Menus.menuPrincipal();
             switch (escolhaInicial) {
                 case 1:
                     Livro livro = tela.cadastrar();

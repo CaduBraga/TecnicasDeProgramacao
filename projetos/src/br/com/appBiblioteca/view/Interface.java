@@ -2,6 +2,8 @@ package br.com.appBiblioteca.view;
 
 import br.com.appBiblioteca.model.Livro;
 import br.com.appBiblioteca.service.*;
+import br.com.appBiblioteca.service.exceptions.EntradaInvalidaException;
+
 import java.util.List;
 import java.util.Scanner;
 
