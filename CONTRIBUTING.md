@@ -9,7 +9,7 @@ Obrigado por considerar contribuir para este projeto educacional de Técnicas de
 1. Faça um fork deste repositório
 2. Clone o fork para sua máquina local:
    ```bash
-   git clone https://github.com/seu-usuario/TecnicasDeProgramacao.git
+   git clone https://github.com/CaduBraga/TecnicasDeProgramacao.git
    ```
 
 ### 2. Crie uma Branch
