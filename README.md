@@ -25,8 +25,6 @@ Este repositório contém todos os exercícios práticos, atividades e projetos 
 - [🎓 Aprendizados Desenvolvidos](#-aprendizados-desenvolvidos)  
 - [🚀 Como Executar os Projetos](#-como-executar-os-projetos)  
 - [📊 Estatísticas do Repositório](#-estatísticas-do-repositório)  
-- [👨‍🏫 Sobre o Professor](#-sobre-o-professor)  
-- [🏢 Sobre o CentroWeg](#-sobre-o-centroweg)  
 - [📝 Observações Finais](#-observações-finais)  
 - [📄 Licença](#-licença)  
 - [📝 Changelog](#-changelog)  
@@ -419,3 +417,4 @@ Este é um projeto educacional desenvolvido durante o curso de Técnicas de Prog
 
 
 *Última atualização: Agosto 2025*
+
