@@ -52,7 +52,6 @@ Se você testemunhar ou sofrer comportamento inaceitável, ou tiver outras preoc
 
 1. **Via GitHub**: Abra uma issue privada ou use o sistema de report do GitHub
 2. **Via Email**: Entre em contato com os líderes do projeto
-3. **Via Discord/Slack**: Se disponível, use os canais apropriados
 
 ### Processo de Investigação
 
@@ -87,10 +86,10 @@ Este Código de Conduta é adaptado do [Contributor Covenant](https://www.contri
 
 Para questões sobre este Código de Conduta:
 
-- **Email**: [email-do-projeto]
+- **Email**: [carlos_e_braga@estudante.sesisenai.org.br]
 - **GitHub**: Abra uma issue no repositório
 - **Discord/Slack**: Use os canais apropriados
 
 ---
 
-**Juntos, podemos criar um ambiente de aprendizado positivo e inclusivo!** 🌟
+**Juntos, podemos criar um ambiente de aprendizado positivo!** 🌟
