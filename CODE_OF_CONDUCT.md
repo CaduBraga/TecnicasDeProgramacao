@@ -14,7 +14,6 @@ Exemplos de comportamento que contribuem para um ambiente positivo:
 - **Colaboração**: Ajude outros desenvolvedores a aprender
 - **Construtividade**: Ofereça feedback construtivo e útil
 - **Educação**: Mantenha o foco no aprendizado e crescimento
-- **Inclusividade**: Seja acolhedor com novos contribuidores
 - **Profissionalismo**: Mantenha um comportamento profissional
 
 ### ❌ Comportamentos Inaceitáveis
