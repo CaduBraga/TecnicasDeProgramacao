@@ -14,17 +14,17 @@ O método `totalGeralItens()` é `static`. É correto chamá-lo diretamente pela
 ### [Certo ou Errado]
 
 ```java
-produto1.totalGeralItens();
+produtoV11.totalGeralItens();
 
 ```
 
-O método `totalGeralItens()` é `static`, mas está sendo chamado por uma instância (`produto1`). Isso está correto e recomendado?
+O método `totalGeralItens()` é `static`, mas está sendo chamado por uma instância (`produtoV11`). Isso está correto e recomendado?
 
 ## Questão 3
 ### [Certo ou Errado]
 
 ```java
-Produto.mostrar();
+ProdutoV1.mostrar();
 ```
 
 Sabendo que o método `mostrar()` **não é estático**, essa chamada está correta?
@@ -33,7 +33,7 @@ Sabendo que o método `mostrar()` **não é estático**, essa chamada está corr
 ### [Certo ou Errado]
 
 ```java
-produto2.mostrar();
+produtoV12.mostrar();
 ```
 
 Essa chamada de método não estático (`mostrar()`) a partir de um objeto está correta?
@@ -42,7 +42,7 @@ Essa chamada de método não estático (`mostrar()`) a partir de um objeto está
 ### [Certo ou Errado]
 
 ```java
-System.out.println(Produto.totalItens);
+System.out.println(ProdutoV1.totalItens);
 ```
 
 Atributo estático sendo acessado diretamente pela classe. Isso está correto?
@@ -51,7 +51,7 @@ Atributo estático sendo acessado diretamente pela classe. Isso está correto?
 ### [Certo ou Errado]
 
 ```java
-System.out.println(produto1.totalItens);
+System.out.println(produtoV11.totalItens);
 ```
 
 O atributo estático `totalItens` está sendo acessado por uma instância. Isso é boa prática?
@@ -60,7 +60,7 @@ O atributo estático `totalItens` está sendo acessado por uma instância. Isso 
 ### [O que acontece?]
 
 ```java
-Produto produto = new Produto();
+ProdutoV1 produtoV1 = new ProdutoV1();
 ```
 
 Sabendo que o construtor incrementa `totalItens`, o que acontece com esse valor após a criação do objeto?
@@ -69,7 +69,7 @@ Sabendo que o construtor incrementa `totalItens`, o que acontece com esse valor 
 ### [Explique]
 
 ```java
-Produto.totalItens = 0;
+ProdutoV1.totalItens =0;
 ```
 
 Explique o impacto dessa linha. O que ocorre com o valor de `totalItens` nas demais instâncias?
@@ -126,11 +126,11 @@ public class Exemplo {
 ## Questão 12
 
 ```java
-public class Produto {
+public class ProdutoV1 {
     String nome;
     static int totalProdutos = 0;
 
-    public Produto(String nome) {
+    public ProdutoV1(String nome) {
         this.nome = nome;
         totalProdutos++;
     }
@@ -144,11 +144,11 @@ public class Produto {
 
 ```java
 
-public class Main {
+public class MainUtil {
     public static void main(String[] args) {
-        Produto p1 = new Produto("Arroz");
-        Produto p2 = new Produto("Feijão");
-        Produto.mostrarTotal();
+        ProdutoV1 p1 = new ProdutoV1("Arroz");
+        ProdutoV1 p2 = new ProdutoV1("Feijão");
+        ProdutoV1.mostrarTotal();
     }
 }
 
@@ -159,7 +159,7 @@ public class Main {
 ## Questão 13
 
 ```java
-public class Teste {
+public class Testes {
     int numero = 5;
 
     public static void imprimirNumero() {
@@ -184,7 +184,7 @@ public class Util {
 ```
 
 ```java
-ublic class Main {
+ublic class MainUtil {
     public static void main(String[] args) {
         Util.saudacao();
     }
@@ -216,7 +216,7 @@ public class Contador {
 ## Questão 16
 
 ```java
-public class Teste {
+public class Testes {
     static int x = 5;
 
     public static void alterar() {
@@ -236,7 +236,7 @@ public class Teste {
 ## Questão 17
 
 ```java
-ic class Produto {
+ic class ProdutoV1 {
     String nome;
     double preco;
 
@@ -268,7 +268,7 @@ public class ClasseA {
 
 ```java
 
-public class Teste {
+public class Testes {
     static int total = 0;
 
     public void incrementar() {
@@ -276,11 +276,11 @@ public class Teste {
     }
 
     public static void main(String[] args) {
-        Teste t1 = new Teste();
-        Teste t2 = new Teste();
+        Testes t1 = new Testes();
+        Testes t2 = new Testes();
         t1.incrementar();
         t2.incrementar();
-        System.out.println(Teste.total);
+        System.out.println(Testes.total);
     }
 }
 

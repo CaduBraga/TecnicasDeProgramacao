@@ -210,7 +210,7 @@ O projeto **appFrutaria** foi aprimorado com um sistema robusto de tratamento de
 
 **Estrutura de Exceções Criadas:**
 - **EntradaInvalidaException** - Para entradas inválidas do usuário
-- **ProdutoNaoEncontradoException** - Para produtos não encontrados
+- **ProdutoNaoEncontradoException** - Para produtoV1s não encontrados
 - **EstoqueInsuficienteException** - Para quantidades indisponíveis
 
 **Serviço de Validação (`ValidacaoService`):**
@@ -311,7 +311,7 @@ cd "nome-do-projeto/src"
 javac -d ../../bin *.java
 
 # Executar
-java -cp ../../bin br.com.nomeDoProjeto.main.Main
+java -cp ../../bin br.com.nomeDoProjeto.main.MainUtil
 ```
 
 ### **Scripts de Automação**

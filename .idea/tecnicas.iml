@@ -2,7 +2,23 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/atividades CRUD e MVC/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/atividades heranca/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/atividades polimorfismo/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/atividades static/respostas/11-13" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/atividades static/respostas/14" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/atividades static/respostas/15-19" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/atividades static/respostas/20" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/desafio jean/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projetos/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/prova/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/simulado classes/10" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/simulado classes/11" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/simulado classes/12/v1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/simulado classes/12/v2 (melhorada)" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tratamento excecoes/src" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="tecnicas" />

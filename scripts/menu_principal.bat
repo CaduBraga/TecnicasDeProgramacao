@@ -1,5 +1,5 @@
 @echo off
-title Menu Principal - Tecnicas de Programacao
+title Menu PrincipalAluno - Tecnicas de Programacao
 color 0A
 
 :menu

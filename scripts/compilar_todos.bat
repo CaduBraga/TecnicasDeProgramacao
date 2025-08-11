@@ -117,6 +117,6 @@ echo ========================================
 echo.
 echo Para executar os projetos:
 echo - Navegue ate o diretorio desejado
-echo - Execute: java -cp ../../bin br.com.nomeProjeto.main.Main
+echo - Execute: java -cp ../../bin br.com.nomeProjeto.main.MainUtil
 echo.
 pause

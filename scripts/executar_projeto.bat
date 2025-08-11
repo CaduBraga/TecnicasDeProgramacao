@@ -58,7 +58,7 @@ if "%projeto%"=="9" set projeto=projetoLoja
 if "%projeto%"=="10" set projeto=projetoPetshop
 
 cd "atividades heranca/src/br/com/%projeto%/main"
-java Main
+java MainUtil
 cd ../../../../../..
 goto fim
 
@@ -107,13 +107,13 @@ goto fim
 
 :polimorfismo
 cd "atividades polimorfismo/src"
-java br.com.atividadesPolimorfismo.main.Main
+java br.com.atividadesPolimorfismo.main.MainUtil
 cd ../..
 goto fim
 
 :atividades_crud
 cd "atividades CRUD e MVC/src"
-java br.com.atividades-CRUDeMVC.main.Main
+java br.com.atividades-CRUDeMVC.main.MainUtil
 cd ../..
 goto fim
 
@@ -129,29 +129,29 @@ set /p simulado="Digite o numero do simulado: "
 
 if "%simulado%"=="1" (
     cd "simulado classes/10"
-    java Principal
+    java PrincipalAluno
     cd ../..
 )
 if "%simulado%"=="2" (
     cd "simulado classes/11"
-    java Principal
+    java PrincipalAluno
     cd ../..
 )
 if "%simulado%"=="3" (
     cd "simulado classes/12/v1"
-    java Principal
+    java PrincipalAluno
     cd ../../..
 )
 if "%simulado%"=="4" (
     cd "simulado classes/12/v2"
-    java Principal
+    java PrincipalAluno
     cd ../../..
 )
 goto fim
 
 :static
 cd "atividades static/respostas/11-13"
-java Main
+java MainUtil
 cd ../../../..
 goto fim
 

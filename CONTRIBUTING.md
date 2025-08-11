@@ -24,7 +24,7 @@ git checkout -b feature/nova-funcionalidade
 - Mantenha o código limpo e bem documentado
 - Siga os padrões de nomenclatura Java
 - Adicione comentários explicativos quando necessário
-- Teste seu código antes de submeter
+- Testes seu código antes de submeter
 
 ### 4. Commit
 
