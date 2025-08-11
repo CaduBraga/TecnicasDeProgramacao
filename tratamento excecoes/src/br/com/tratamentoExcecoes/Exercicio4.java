@@ -30,6 +30,8 @@ public class Exercicio4 {
                     default:
                         System.out.println("Opção inválida!");
                 }
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida! Digite apenas números.");
             }
 
         } while (continuar);

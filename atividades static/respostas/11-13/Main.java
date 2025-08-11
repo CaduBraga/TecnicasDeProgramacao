@@ -1,8 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        Produto p1 = new Produto("Arroz");
-        Produto p2 = new Produto("Feijão");
-        Produto.mostrarTotal();
+        ProdutoAtividade p1 = new ProdutoAtividade("Arroz");
+        ProdutoAtividade p2 = new ProdutoAtividade("Feijão");
+        ProdutoAtividade.mostrarTotal();
     }
 }
-// Sim, está correto. Será exibido: "Total: 2"
+// Sim, está correto. Será exibido:
+// "Total: 2"

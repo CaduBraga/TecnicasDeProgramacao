@@ -19,7 +19,7 @@
 **Resposta:** Não, o ideal seria chamá-lo diretamente da classe ao invés da instância (objeto).
 
 ## Questão 7
-**Resposta:** Aumenta em um (Produto.totalItens++;).
+**Resposta:** Aumenta em um (ProdutoV1.totalItens++;).
 
 ## Questão 8
 **Resposta:** Ele se torna 0, em todas as instâncias (porque é estático).
