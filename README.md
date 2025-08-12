@@ -234,6 +234,36 @@ O projeto **appFrutaria** foi aprimorado com um sistema robusto de tratamento de
 - ✅ Padrão consistente de tratamento em todo o sistema
 - ✅ Validação adequada de dados de entrada
 
+### 🧪 **9. Prova – Sistema de Controle WEG 2.0**
+**Localização:** `prova/`
+
+**Descrição:** Aplicação de console para gestão de estoque de equipamentos industriais, com cadastro, consultas, movimentação de estoque e relatórios.
+
+**Principais Funcionalidades:**
+- Cadastro de equipamentos (genérico, `MotorEletrico`, `PainelControle`)
+- Listagem geral e por tipo
+- Busca por código e por nome (contendo)
+- Filtro por preço mínimo
+- Remoção por código
+- Movimentação de estoque (adicionar/retirar) com validação de quantidade
+- Relatórios: quantidade total, maior preço, maior quantidade, estoque baixo
+
+**Arquitetura:**
+- `model/` – `Equipamento` (base), `MotorEletrico` (potência), `PainelControle` (tensão)
+- `service/` – `EstoqueService` (regras de negócio, busca/filtragem/relatórios)
+- `service/exceptions/` – `QuantidadeInsuficiente` (exceção checada)
+- `view/` – `InterfaceUsuario` (menu e interação via console)
+- `main/` – `Main` (ponto de entrada)
+
+**Execução rápida:**
+```bash
+# Compilar todos os projetos (recomendado)
+scripts/compilar_todos.bat
+
+# Executar a Prova a partir da raiz do repositório
+java -cp "prova/bin" br.com.prova.main.Main
+```
+
 ---
 
 ## 🛠️ **Tecnologias Utilizadas**
@@ -344,6 +374,15 @@ scripts/limpar_bin.bat
 
 # Gerar estatísticas
 scripts/estatisticas_projeto.bat
+```
+
+#### Executar projeto `prova/` manualmente
+```bash
+# Compilar todos (gera `prova/bin`)
+scripts/compilar_todos.bat
+
+# Executar
+java -cp "prova/bin" br.com.prova.main.Main
 ```
 
 ### **Estrutura de Compilação**

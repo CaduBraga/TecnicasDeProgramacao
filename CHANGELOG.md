@@ -8,6 +8,14 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
 ## [1.0.0] - 2024-12-19
 
 ### Adicionado
+- **Prova – Sistema de Controle WEG 2.0**
+  - Módulo `prova/` com aplicação console para gestão de estoque
+  - Entidades: `Equipamento`, `MotorEletrico`, `PainelControle`
+  - Serviço: `EstoqueService` com cadastro, listagens, filtros e relatórios
+  - Exceção checada: `QuantidadeInsuficiente` para operações de retirada
+  - Interface de usuário em console: `InterfaceUsuario` com menu completo
+  - Ponto de entrada: `br.com.prova.main.Main`
+
 - **Atividades de Herança**: 10 projetos completos demonstrando conceitos de herança
   - ProjetoEscola - Sistema de cadastro de alunos e professores
   - ProjetoClinica - Sistema de cadastro de pacientes e médicos
