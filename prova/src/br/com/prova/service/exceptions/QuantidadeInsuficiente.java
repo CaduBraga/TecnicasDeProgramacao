@@ -5,4 +5,3 @@ public class QuantidadeInsuficiente extends Exception {
         super(message);
     }
 }
-

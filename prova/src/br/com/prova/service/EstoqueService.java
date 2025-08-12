@@ -3,8 +3,7 @@ package br.com.prova.service;
 import java.util.ArrayList;
 import java.util.List;
 import br.com.prova.model.*;
-import br.com.prova.model.equipamentos.MotorEletrico;
-import br.com.prova.model.equipamentos.PainelControle;
+import br.com.prova.model.equipamentos.*;
 import br.com.prova.service.exceptions.QuantidadeInsuficiente;
 
 public class EstoqueService {
@@ -52,16 +51,16 @@ public class EstoqueService {
     }
 
     public void adicionarQuantidade(String codigo, int qtd) {
-        if (qtd <= 0) throw new IllegalArgumentException("Quantidade a adicionar deve ser positiva.");
+        if (qtd <= 0) throw new IllegalArgumentException("A quantidade adicionada deve ser positiva.");
         Equipamento e = buscarPorCodigo(codigo);
-        if (e == null) throw new IllegalArgumentException("Equipamento não encontrado com código: " + codigo);
+        if (e == null) throw new IllegalArgumentException("O equipamento com o código: " + codigo + "não foi encontrado");
         e.setQuantidade(e.getQuantidade() + qtd);
     }
 
     public void retirarQuantidade(String codigo, int qtd) throws QuantidadeInsuficiente {
-        if (qtd <= 0) throw new IllegalArgumentException("Quantidade a retirar deve ser positiva.");
+        if (qtd <= 0) throw new IllegalArgumentException("A quantidade retirada deve ser positiva.");
         Equipamento e = buscarPorCodigo(codigo);
-        if (e == null) throw new IllegalArgumentException("Equipamento não encontrado com código: " + codigo);
+        if (e == null) throw new IllegalArgumentException("O equipamento com o código: " + codigo + "não foi encontrado");
         if (e.getQuantidade() < qtd) {
             throw new QuantidadeInsuficiente("Operação negada: retirada maior que a quantidade disponível.");
         }
@@ -129,4 +128,3 @@ public class EstoqueService {
         return encontrados;
     }
 }
-

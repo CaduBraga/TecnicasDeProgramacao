@@ -24,7 +24,6 @@ public class PainelControle extends Equipamento {
 
     @Override
     public String toString() {
-        return "PainelControle | " + super.toString() + String.format(" | Tensão: %s", tensao);
+        return "Painel de Controle | " + super.toString() + String.format(" | Tensão: %s", tensao);
     }
 }
-

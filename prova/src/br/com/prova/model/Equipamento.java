@@ -38,7 +38,7 @@ public class Equipamento {
 
     public void setQuantidade(int quantidade) {
         if (quantidade < 0) {
-            throw new IllegalArgumentException("Quantidade não pode ser negativa.");
+            throw new IllegalArgumentException("A quantidade não pode ser negativa.");
         }
         this.quantidade = quantidade;
     }
@@ -49,7 +49,7 @@ public class Equipamento {
 
     public void setPreco(double preco) {
         if (preco < 0) {
-            throw new IllegalArgumentException("Preço não pode ser negativo.");
+            throw new IllegalArgumentException("O preço não pode ser negativo.");
         }
         this.preco = preco;
     }
@@ -60,4 +60,3 @@ public class Equipamento {
                 codigo, nome, quantidade, preco);
     }
 }
-

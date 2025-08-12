@@ -20,14 +20,13 @@ public class MotorEletrico extends Equipamento {
 
     public void setPotencia(double potencia) {
         if (potencia < 0) {
-            throw new IllegalArgumentException("Potência não pode ser negativa.");
+            throw new IllegalArgumentException("A potência não pode ser negativa.");
         }
         this.potencia = potencia;
     }
 
     @Override
     public String toString() {
-        return "MotorEletrico | " + super.toString() + String.format(" | Potência: %.2f", potencia);
+        return "Motor Elétrico | " + super.toString() + String.format(" | Potência: %.2f", potencia);
     }
 }
-

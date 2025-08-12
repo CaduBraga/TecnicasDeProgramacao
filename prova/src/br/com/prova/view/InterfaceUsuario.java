@@ -1,8 +1,7 @@
 package br.com.prova.view;
 
 import br.com.prova.model.*;
-import br.com.prova.model.equipamentos.MotorEletrico;
-import br.com.prova.model.equipamentos.PainelControle;
+import br.com.prova.model.equipamentos.*;
 import br.com.prova.service.EstoqueService;
 import br.com.prova.service.exceptions.QuantidadeInsuficiente;
 
@@ -11,14 +10,15 @@ import java.util.Scanner;
 
 public class InterfaceUsuario {
     private EstoqueService service;
-    private Scanner scanner;
+    private final Scanner scanner;
 
-    public void InterfaceUsuario(EstoqueService service) {
+    public InterfaceUsuario(EstoqueService service) {
         this.service = service;
         this.scanner = new Scanner(System.in);
     }
 
     public InterfaceUsuario() {
+        this.scanner = new Scanner(System.in);
     }
 
     public void executar() {
@@ -37,15 +37,13 @@ public class InterfaceUsuario {
                     case 7 -> relatoriosEstoque();
                     case 8 -> buscaPorNome();
                     case 9 -> buscaPorPreco();
-                    case 0 -> System.out.println("Saindo... até logo!");
+                    case 0 -> encerrar();
                     default -> System.out.println("Opção inválida. Tente novamente.");
                 }
             } catch (NumberFormatException nfe) {
                 System.out.println("Entrada inválida: informe um número.");
-            } catch (IllegalArgumentException iae) {
+            } catch (IllegalArgumentException | QuantidadeInsuficiente iae) {
                 System.out.println("Erro: " + iae.getMessage());
-            } catch (QuantidadeInsuficiente qie) {
-                System.out.println("Erro: " + qie.getMessage());
             } catch (Exception ex) {
                 System.out.println("Erro inesperado: " + ex.getMessage());
             }
@@ -76,9 +74,9 @@ public class InterfaceUsuario {
 
     private void cadastrarEquipamento() {
         System.out.println("Tipo de equipamento:");
-        System.out.println("1 - MotorEletrico");
-        System.out.println("2 - PainelControle");
-        System.out.println("3 - Outro (Equipamento genérico)");
+        System.out.println("1 - Motor Elétrico");
+        System.out.println("2 - Painel de Controle");
+        System.out.println("3 - Equipamento genérico");
         int tipo = Integer.parseInt(lerEntrada("Escolha o tipo (1-3): "));
         String codigo = lerEntrada("Código: ");
         String nome = lerEntrada("Nome: ");
@@ -201,6 +199,18 @@ public class InterfaceUsuario {
             System.out.println("Nenhum equipamento com preço acima de R$ " + precoMin);
         } else {
             encontrados.forEach(System.out::println);
+        }
+    }
+
+    public void encerrar() {
+        try {
+            System.out.println("Encerrando o sistema...");
+            Thread.sleep(1000);
+            System.out.println("Sistema encerrado. Obrigado por utilizar o Sistema de controle Weg 2.0");
+            System.exit(0);
+        } catch (InterruptedException e) {
+            System.out.println("Erro ao tentar encerrar o sistema: " + e.getMessage());
+            Thread.currentThread().interrupt();
         }
     }
 }
