@@ -206,7 +206,7 @@ public class InterfaceUsuario {
         try {
             System.out.println("Encerrando o sistema...");
             Thread.sleep(1000);
-            System.out.println("Sistema encerrado. Obrigado por utilizar o Sistema de controle Weg 2.0");
+            System.out.println("Sistema encerrado. Obrigado por utilizar o Sistema de controle Weg 2.0!");
             System.exit(0);
         } catch (InterruptedException e) {
             System.out.println("Erro ao tentar encerrar o sistema: " + e.getMessage());
