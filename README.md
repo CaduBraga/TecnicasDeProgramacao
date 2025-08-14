@@ -204,6 +204,53 @@ src/br/com/atividades-CRUDeMVC/
 - ✅ Validação de entrada
 - ✅ Tratamento de exceções (appFrutaria)
 
+### 🏭 **9. Prova - Sistema de Controle WEG 2.0**
+**Localização:** `prova/`
+
+**Conteúdo:** Projeto de avaliação final implementando sistema de controle de estoque para equipamentos industriais.
+
+**Estrutura:**
+```
+src/br/com/prova/
+├── model/           # Classes de dados e herança
+│   ├── Equipamento.java           # Classe base abstrata
+│   └── equipamentos/              # Subclasses especializadas
+│       ├── MotorEletrico.java     # Motor com potência
+│       └── PainelControle.java    # Painel com tensão
+├── service/         # Lógica de negócio
+│   ├── EstoqueService.java        # Serviços de estoque
+│   └── exceptions/                # Exceções customizadas
+│       └── QuantidadeInsuficiente.java
+├── view/            # Interface com usuário
+│   └── InterfaceUsuario.java      # Menu interativo
+└── main/            # Ponto de entrada
+    └── Main.java                  # Execução principal
+```
+
+**Funcionalidades Implementadas:**
+- ✅ **Cadastro de Equipamentos** - Suporte a 3 tipos (Motor, Painel, Genérico)
+- ✅ **Gestão de Estoque** - Adicionar/remover quantidades
+- ✅ **Busca e Filtros** - Por código, nome, tipo e preço
+- ✅ **Relatórios** - Estoque baixo, maior preço, maior quantidade
+- ✅ **Validações** - Preços e quantidades não negativos
+- ✅ **Tratamento de Exceções** - Exceção customizada para estoque insuficiente
+
+**Conceitos Aplicados:**
+- ✅ **Herança** - MotorEletrico e PainelControle herdam de Equipamento
+- ✅ **Encapsulamento** - Atributos privados com getters/setters validados
+- ✅ **Polimorfismo** - Lista heterogênea de equipamentos
+- ✅ **Tratamento de Exceções** - Exceção customizada QuantidadeInsuficiente
+- ✅ **Padrão MVC** - Separação clara entre Model, View e Service
+- ✅ **Validação de Dados** - Verificações de integridade nos setters
+- ✅ **Interface com Usuário** - Menu interativo com tratamento de erros
+
+**Características Técnicas:**
+- **Sistema Robusto** - Não quebra com entradas inválidas
+- **Validações Completas** - Verificação de dados em tempo real
+- **Exceções Customizadas** - Tratamento específico para regras de negócio
+- **Interface Intuitiva** - Menu numerado com opções claras
+- **Persistência em Memória** - Lista dinâmica de equipamentos
+
 #### 🛡️ **Tratamento de Exceções - AppFrutaria**
 
 O projeto **appFrutaria** foi aprimorado com um sistema robusto de tratamento de exceções, seguindo o padrão do projeto `tratamento excecoes`.
@@ -358,13 +405,14 @@ projeto/
 
 ## 📊 **Estatísticas do Repositório**
 
-- **Total de Projetos:** 15+
+- **Total de Projetos:** 16+
 - **Total de Exercícios:** 20+
-- **Linhas de Código:** 2000+
-- **Conceitos Abordados:** 10+
-- **Padrões Implementados:** 3+
-- **Exceções Criadas:** 3 tipos customizados
+- **Linhas de Código:** 2500+
+- **Conceitos Abordados:** 12+
+- **Padrões Implementados:** 4+
+- **Exceções Criadas:** 4 tipos customizados
 - **Scripts de Automação:** 8
+- **Projetos de Avaliação:** 1 (Sistema WEG 2.0)
 
 ---
 

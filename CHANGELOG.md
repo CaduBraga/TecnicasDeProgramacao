@@ -5,6 +5,34 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.1.0] - 2024-12-20
+
+### Adicionado
+- **Prova - Sistema de Controle WEG 2.0**: Projeto de avaliação final
+  - Sistema completo de controle de estoque para equipamentos industriais
+  - Classe base Equipamento com herança para MotorEletrico e PainelControle
+  - EstoqueService com funcionalidades CRUD completas
+  - Interface de usuário interativa com menu numerado
+  - Exceção customizada QuantidadeInsuficiente para regras de negócio
+  - Validações robustas de dados (preços e quantidades não negativos)
+  - Relatórios de estoque (baixo, maior preço, maior quantidade)
+  - Busca avançada por nome, tipo e preço
+  - Movimentação de estoque (adicionar/remover quantidades)
+
+### Características da Prova
+- **Arquitetura MVC** - Separação clara entre Model, View e Service
+- **Herança e Polimorfismo** - Classes especializadas herdam de Equipamento
+- **Tratamento de Exceções** - Exceção customizada para estoque insuficiente
+- **Validação de Dados** - Verificações de integridade em tempo real
+- **Interface Robusta** - Tratamento de erros de entrada do usuário
+- **Sistema de Estoque** - Gestão completa de inventário industrial
+
+### Tecnologias
+- Java JDK 22
+- Padrão MVC
+- Tratamento de exceções customizadas
+- Validação de dados robusta
+
 ## [1.0.0] - 2024-12-19
 
 ### Adicionado
