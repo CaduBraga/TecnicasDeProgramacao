@@ -1,6 +1,6 @@
-package view;
+package br.com.provaPOO.view;
 
-import service.HotelService;
+import br.com.provaPOO.service.HotelService;
 
 /**
  * Classe de inicialização da aplicação.

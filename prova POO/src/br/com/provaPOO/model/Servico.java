@@ -1,4 +1,4 @@
-package model;
+package br.com.provaPOO.model;
 
 /**
  * Serviço adicional que pode ser agregado a uma Reserva (agregação).

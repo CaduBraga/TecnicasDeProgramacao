@@ -1,4 +1,4 @@
-package model;
+package br.com.provaPOO.model;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;

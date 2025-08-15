@@ -1,4 +1,4 @@
-package model;
+package br.com.provaPOO.model;
 
 /**
  * Hóspede herda de Pessoa (Desafio de herança).

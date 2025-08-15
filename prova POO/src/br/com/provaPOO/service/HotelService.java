@@ -1,5 +1,9 @@
-package service;
+package br.com.provaPOO.service;
 
+import br.com.provaPOO.model.Hospede;
+import br.com.provaPOO.model.Quarto;
+import br.com.provaPOO.model.Reserva;
+import br.com.provaPOO.model.Servico;
 import model.*;
 
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package model;
+package br.com.provaPOO.model;
 
 /**
  * Classe abstrata base para pessoas do sistema.

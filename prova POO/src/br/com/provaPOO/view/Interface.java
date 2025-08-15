@@ -1,11 +1,14 @@
-package view;
+package br.com.provaPOO.view;
 
+import br.com.provaPOO.model.Hospede;
+import br.com.provaPOO.model.Quarto;
+import br.com.provaPOO.model.Reserva;
+import br.com.provaPOO.model.Servico;
 import model.*;
-import service.HotelService;
+import br.com.provaPOO.service.HotelService;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package model;
+package br.com.provaPOO.model;
 
 /**
  * Representa um quarto do hotel.
