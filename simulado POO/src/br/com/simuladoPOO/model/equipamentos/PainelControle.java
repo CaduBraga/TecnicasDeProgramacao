@@ -1,6 +1,6 @@
-package br.com.prova.model.equipamentos;
+package br.com.simuladoPOO.model.equipamentos;
 
-import br.com.prova.model.Equipamento;
+import br.com.simuladoPOO.model.Equipamento;
 
 public class PainelControle extends Equipamento {
     private String tensao;

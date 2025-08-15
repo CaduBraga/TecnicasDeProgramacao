@@ -1,4 +1,4 @@
-package br.com.prova.model;
+package br.com.simuladoPOO.model;
 
 public class Equipamento {
     private String codigo;

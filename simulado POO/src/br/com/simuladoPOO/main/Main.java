@@ -1,7 +1,7 @@
-package br.com.prova.main;
+package br.com.simuladoPOO.main;
 
-import br.com.prova.service.EstoqueService;
-import br.com.prova.view.InterfaceUsuario;
+import br.com.simuladoPOO.service.EstoqueService;
+import br.com.simuladoPOO.view.InterfaceUsuario;
 
 public class Main {
     public static void main(String[] args) {

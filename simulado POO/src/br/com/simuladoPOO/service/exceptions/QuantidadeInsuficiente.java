@@ -1,4 +1,4 @@
-package br.com.prova.service.exceptions;
+package br.com.simuladoPOO.service.exceptions;
 
 public class QuantidadeInsuficiente extends Exception {
     public QuantidadeInsuficiente(String message) {

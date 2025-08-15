@@ -1,10 +1,10 @@
-package br.com.prova.service;
+package br.com.simuladoPOO.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import br.com.prova.model.*;
-import br.com.prova.model.equipamentos.*;
-import br.com.prova.service.exceptions.QuantidadeInsuficiente;
+import br.com.simuladoPOO.model.*;
+import br.com.simuladoPOO.model.equipamentos.*;
+import br.com.simuladoPOO.service.exceptions.QuantidadeInsuficiente;
 
 public class EstoqueService {
     private final List<Equipamento> lista = new ArrayList<>();

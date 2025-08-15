@@ -1,10 +1,9 @@
-package br.com.prova.view;
+package br.com.simuladoPOO.view;
 
-import br.com.prova.model.*;
-import br.com.prova.model.equipamentos.*;
-import br.com.prova.service.EstoqueService;
-import br.com.prova.service.exceptions.QuantidadeInsuficiente;
-
+import br.com.simuladoPOO.model.*;
+import br.com.simuladoPOO.model.equipamentos.*;
+import br.com.simuladoPOO.service.EstoqueService;
+import br.com.simuladoPOO.service.exceptions.QuantidadeInsuficiente;
 import java.util.List;
 import java.util.Scanner;
 
