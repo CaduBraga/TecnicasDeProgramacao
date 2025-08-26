@@ -1,4 +1,4 @@
-﻿# 📚 Técnicas de Programação - CentroWeg MIDS 77
+# 📚 Técnicas de Programação - CentroWeg MIDS 77
 
 > **Professor:** Bruno da Silva de Andrade  
 > **Instituição:** CentroWeg  
@@ -48,22 +48,42 @@ O repositório conta com atividades que tem como objetivo desenvolver competênc
 
 ## 📁 **Estrutura do Repositório**
 
-### 🏗️ **1. Atividades de Herança**
+### 🔄 **1. Atividades CRUD e MVC**
+**Localização:** `atividades CRUD e MVC/`
+
+**Conteúdo:** Exercícios sobre operações CRUD (Create, Read, Update, Delete) e padrão MVC.
+
+**Estrutura:**
+```
+src/br/com/atividades/
+├── model/     # Entidades
+├── views/     # Interface
+├── service/   # Operações CRUD
+└── main/      # Execução
+```
+
+**Conceitos Aplicados:**
+- ✅ Operações CRUD
+- ✅ Padrão MVC
+- ✅ Persistência de dados
+- ✅ Interface com usuário
+
+### 🏗️ **2. Atividades de Herança**
 **Localização:** `atividades heranca/`
 
 **Conteúdo:** 10 projetos completos demonstrando conceitos de herança, encapsulamento e organização de código.
 
 **Projetos Implementados:**
-- 🏫 **ProjetoEscola** - Sistema de cadastro de alunos e professores
-- 🏥 **ProjetoClinica** - Sistema de cadastro de pacientes e médicos
-- 🚗 **ProjetoEstacionamento** - Sistema de cadastro de veículos (carros e motos)
+- 🏫 **ProjetoAcademia** - Sistema de cadastro de alunos e instrutores
 - 📚 **ProjetoBiblioteca** - Sistema de cadastro de leitores e bibliotecários
-- 🏨 **ProjetoHotel** - Sistema de gestão hoteleira
-- 💪 **ProjetoAcademia** - Sistema de cadastro de alunos e instrutores
+- 🏥 **ProjetoClinica** - Sistema de cadastro de pacientes e médicos
 - 🎬 **ProjetoCinema** - Sistema de cadastro de clientes e funcionários
-- 🤝 **ProjetoOng** - Sistema de voluntariado
+- 🚗 **ProjetoEstacionamento** - Sistema de cadastro de veículos (carros e motos)
+- 🏨 **ProjetoHotel** - Sistema de gestão hoteleira
 - 🛍 **ProjetoLoja** - Sistema de cadastro de clientes e vendedores
+- 🤝 **ProjetoOng** - Sistema de voluntariado
 - 🐶 **ProjetoPetshop** - Sistema de cadastro de donos de pets e veterinários
+- 🏫 **ProjetoEscola** - Sistema de cadastro de alunos e professores
 
 **Conceitos Aplicados:**
 - ✅ Herança (`extends`)
@@ -72,76 +92,7 @@ O repositório conta com atividades que tem como objetivo desenvolver competênc
 - ✅ SRP (Single Responsibility Principle)
 - ✅ Métodos `mostrarDados()` com `@Override`
 
-### ⚠️ **2. Tratamento de Exceções**
-**Localização:** `tratamento excecoes/`
-
-**Conteúdo:** Exercícios práticos sobre tratamento de exceções em Java.
-
-**Exercícios:**
-- **Exercicio1.java** - Tratamento de `NumberFormatException`
-- **Exercicio2.java** - Tratamento de `ArrayIndexOutOfBoundsException`
-- **Exercicio3.java** - Tratamento de `ArithmeticException`
-- **Exercicio4.java** - Tratamento de múltiplas exceções
-
-**Conceitos Aplicados:**
-- ✅ Blocos `try-catch`
-- ✅ Exceções específicas vs genéricas
-- ✅ Tratamento de entrada de dados
-- ✅ Validação de dados
-
-### 🎓 **3. Simulado de Classes**
-**Localização:** `simulado classes/`
-
-**Conteúdo:** Simulados práticos sobre classes e objetos em Java.
-
-**Versões:**
-- **Simulado 10** - Classes básicas com construtores e métodos
-- **Simulado 11** - Classes com herança e polimorfismo
-- **Simulado 12 v1** - Versão inicial com classes simples
-- **Simulado 12 v2** - Versão melhorada com funcionalidades avançadas
-
-**Conceitos Aplicados:**
-- ✅ Construtores (padrão e parametrizados)
-- ✅ Getters e setters
-- ✅ Métodos de instância
-- ✅ Encapsulamento de dados
-
-### 🏆 **4. Desafio Jean**
-**Localização:** `desafio jean/`
-
-**Conteúdo:** Projeto especial seguindo padrão MVC (Model-View-Controller).
-
-**Estrutura:**
-```
-src/br/com/desafioJean/
-├── model/     # Classes de dados
-├── view/      # Interface com usuário
-├── service/   # Lógica de negócio
-└── main/      # Ponto de entrada
-```
-
-**Conceitos Aplicados:**
-- ✅ Padrão MVC
-- ✅ Separação de responsabilidades
-- ✅ Organização de código
-- ✅ Interface com usuário
-
-### 🔧 **5. Atividades Static**
-**Localização:** `atividades static/`
-
-**Conteúdo:** Exercícios teóricos e práticos sobre membros estáticos em Java.
-
-**Arquivos:**
-- **perguntas.md** - 20 questões sobre membros estáticos
-- **respostas/** - Respostas organizadas por grupos de questões
-
-**Conceitos Aplicados:**
-- ✅ Métodos estáticos vs de instância
-- ✅ Atributos estáticos
-- ✅ Acesso a membros estáticos
-- ✅ Boas práticas com `static`
-
-### 🔄 **6. Atividades Polimorfismo**
+### 🔄 **3. Atividades Polimorfismo**
 **Localização:** `atividades polimorfismo/`
 
 **Conteúdo:** Exercícios práticos sobre polimorfismo em Java.
@@ -161,40 +112,57 @@ src/br/com/atividadesPolimorfismo/
 - ✅ Classes abstratas
 - ✅ Interfaces
 
-### 🗄️ **7. Atividades CRUD e MVC**
-**Localização:** `atividades CRUD e MVC/`
+### 🔧 **4. Atividades Static**
+**Localização:** `atividades static/`
 
-**Conteúdo:** Exercícios sobre operações CRUD (Create, Read, Update, Delete) e padrão MVC.
+**Conteúdo:** Exercícios teóricos e práticos sobre membros estáticos em Java.
+
+**Arquivos:**
+- **perguntas.md** - 20 questões sobre membros estáticos
+- **respostas/** - Respostas organizadas por grupos de questões
+  - **1-10/** - Questões 1 a 10
+  - **11-13/** - Questões 11 a 13
+  - **14/** - Questão 14
+  - **15-19/** - Questões 15 a 19
+  - **20/** - Questão 20
+
+**Conceitos Aplicados:**
+- ✅ Métodos estáticos vs de instância
+- ✅ Atributos estáticos
+- ✅ Acesso a membros estáticos
+- ✅ Boas práticas com `static`
+
+### 🏆 **5. Desafio Jean**
+**Localização:** `desafio jean/`
+
+**Conteúdo:** Projeto especial seguindo padrão MVC (Model-View-Controller).
 
 **Estrutura:**
 ```
-src/br/com/atividades-CRUDeMVC/
-├── model/     # Entidades
-├── views/     # Interface
-├── service/   # Operações CRUD
-└── main/      # Execução
+src/br/com/desafioJean/
+├── model/     # Classes de dados
+├── view/      # Interface com usuário
+├── service/   # Lógica de negócio
+└── main/      # Ponto de entrada
 ```
 
 **Conceitos Aplicados:**
-- ✅ Operações CRUD
 - ✅ Padrão MVC
-- ✅ Persistência de dados
+- ✅ Separação de responsabilidades
+- ✅ Organização de código
 - ✅ Interface com usuário
 
-### 🚀 **8. Projetos CRUD e MVC**
+### 🚀 **6. Projetos**
 **Localização:** `projetos/`
 
 **Conteúdo:** Projetos completos implementando CRUD e MVC.
 
 **Projetos:**
 - 📚 **appBiblioteca** - Sistema de biblioteca
+- 📖 **appCursos** - Sistema de cursos
 - 🎬 **appFilmes** - Sistema de filmes
 - 🍎 **appFrutaria** - Sistema de frutaria (com tratamento de exceções)
 - 💊 **appSuplementos** - Sistema de suplementos
-- 📖 **appCursos** - Sistema de cursos
-
-**Arquivos Especiais:**
-- **compilar.bat** - Script para compilação automática
 
 **Conceitos Aplicados:**
 - ✅ CRUD completo
@@ -204,112 +172,109 @@ src/br/com/atividades-CRUDeMVC/
 - ✅ Validação de entrada
 - ✅ Tratamento de exceções (appFrutaria)
 
-### 🏭 **9. Prova - Sistema de Controle WEG 2.0**
-**Localização:** `prova/`
+### 🏭 **7. Prova POO - Sistema de Hotel**
+**Localização:** `prova POO/`
 
-**Conteúdo:** Projeto de avaliação final implementando sistema de controle de estoque para equipamentos industriais.
+**Conteúdo:** Projeto de prova implementando sistema de gerenciamento de hotel seguindo padrão MVC.
 
 **Estrutura:**
 ```
-src/br/com/prova/
+src/br/com/provaPOO/
 ├── model/           # Classes de dados e herança
-│   ├── Equipamento.java           # Classe base abstrata
-│   └── equipamentos/              # Subclasses especializadas
-│       ├── MotorEletrico.java     # Motor com potência
-│       └── PainelControle.java    # Painel com tensão
+│   ├── Pessoa.java               # Classe base
+│   ├── Hospede.java              # Herda de Pessoa
+│   ├── Quarto.java               # Gerenciamento de quartos
+│   ├── Servico.java              # Serviços do hotel
+│   └── Reserva.java              # Reservas com serviços
 ├── service/         # Lógica de negócio
-│   ├── EstoqueService.java        # Serviços de estoque
-│   └── exceptions/                # Exceções customizadas
-│       └── QuantidadeInsuficiente.java
+│   └── HotelService.java         # Serviços do hotel
 ├── view/            # Interface com usuário
-│   └── InterfaceUsuario.java      # Menu interativo
-└── main/            # Ponto de entrada
-    └── Main.java                  # Execução principal
+│   ├── Interface.java            # Interface principal
+│   └── Main.java                 # Ponto de entrada
+└── main/            # Execução principal
 ```
 
 **Funcionalidades Implementadas:**
-- ✅ **Cadastro de Equipamentos** - Suporte a 3 tipos (Motor, Painel, Genérico)
-- ✅ **Gestão de Estoque** - Adicionar/remover quantidades
-- ✅ **Busca e Filtros** - Por código, nome, tipo e preço
-- ✅ **Relatórios** - Estoque baixo, maior preço, maior quantidade
-- ✅ **Validações** - Preços e quantidades não negativos
-- ✅ **Tratamento de Exceções** - Exceção customizada para estoque insuficiente
+- ✅ **Cadastro de Hóspedes** - Sistema de cadastro com herança (Pessoa → Hospede)
+- ✅ **Gestão de Quartos** - Cadastro e gerenciamento de quartos
+- ✅ **Sistema de Reservas** - Criação, edição e cancelamento de reservas
+- ✅ **Serviços do Hotel** - Adição de serviços às reservas
+- ✅ **Cálculo Automático** - Valores de diárias + serviços
+- ✅ **Tratamento de Exceções** - Validação de entradas com try/catch
 
 **Conceitos Aplicados:**
-- ✅ **Herança** - MotorEletrico e PainelControle herdam de Equipamento
-- ✅ **Encapsulamento** - Atributos privados com getters/setters validados
-- ✅ **Polimorfismo** - Lista heterogênea de equipamentos
-- ✅ **Tratamento de Exceções** - Exceção customizada QuantidadeInsuficiente
+- ✅ **Herança** - Hospede herda de Pessoa
+- ✅ **Encapsulamento** - Atributos privados com getters/setters
+- ✅ **Agregação** - Reserva contém List<Servico>
+- ✅ **Tratamento de Exceções** - Try/catch para entradas inválidas
 - ✅ **Padrão MVC** - Separação clara entre Model, View e Service
-- ✅ **Validação de Dados** - Verificações de integridade nos setters
-- ✅ **Interface com Usuário** - Menu interativo com tratamento de erros
+- ✅ **Collections** - Uso de ArrayList para gerenciar dados
+- ✅ **instanceof** - Verificação de tipos em tempo de execução
 
 **Características Técnicas:**
-- **Sistema Robusto** - Não quebra com entradas inválidas
-- **Validações Completas** - Verificação de dados em tempo real
-- **Exceções Customizadas** - Tratamento específico para regras de negócio
-- **Interface Intuitiva** - Menu numerado com opções claras
-- **Persistência em Memória** - Lista dinâmica de equipamentos
+- **Sistema de Menus Hierárquicos** - Submenus organizados
+- **Validação de Dados** - Verificação de entradas com try/catch
+- **Cálculos Automáticos** - Valores calculados dinamicamente
+- **Interface Intuitiva** - Sistema de menus numerados
+- **Persistência em Memória** - Listas dinâmicas para dados
 
-#### 🛡️ **Tratamento de Exceções - AppFrutaria**
+### 🎓 **8. Simulado Classes**
+**Localização:** `simulado classes/`
 
-O projeto **appFrutaria** foi aprimorado com um sistema robusto de tratamento de exceções, seguindo o padrão do projeto `tratamento excecoes`.
+**Conteúdo:** Simulados práticos sobre classes e objetos em Java.
 
-**Estrutura de Exceções Criadas:**
-- **EntradaInvalidaException** - Para entradas inválidas do usuário
-- **ProdutoNaoEncontradoException** - Para produtoV1s não encontrados
-- **EstoqueInsuficienteException** - Para quantidades indisponíveis
+**Versões:**
+- **Simulado 10** - Classes básicas com construtores e métodos
+  - `Produto.java` - Classe de produto
+  - `Principal.java` - Classe principal
+- **Simulado 11** - Classes com herança e polimorfismo
+  - `Aluno.java` - Classe de aluno
+  - `PrincipalAluno.java` - Classe principal
+- **Simulado 12** - Versão com classes simples
 
-**Serviço de Validação (`ValidacaoService`):**
-- `validarInteiro()` - Validação de números inteiros
-- `validarDouble()` - Validação de números decimais
-- `validarString()` - Validação de strings não vazias
-- `validarOpcaoMenu()` - Validação de opções de menu
-- `validarQuantidade()` - Validação de quantidades com estoque
-- `validarPreco()` - Validação de preços não negativos
-- `validarPeso()` - Validação de pesos positivos
+**Conceitos Aplicados:**
+- ✅ Construtores (padrão e parametrizados)
+- ✅ Getters e setters
+- ✅ Métodos de instância
+- ✅ Encapsulamento de dados
 
-**Arquivos Modificados:**
-- **Interface.java** - Métodos `cadastrar()`, `detalhar()`, `remover()`
-- **Menus.java** - Métodos `menuPrincipal()`, `menuTipoProduto()`
-- **InterfaceCompra.java** - Métodos `menuCarrinho()`, `adicionarAoCarrinho()`
+### 🎓 **9. Simulado POO**
+**Localização:** `simulado POO/`
 
-**Benefícios:**
-- ✅ Sistema robusto que não quebra com entradas inválidas
-- ✅ Mensagens claras de erro para o usuário
-- ✅ Código organizado com separação de responsabilidades
-- ✅ Padrão consistente de tratamento em todo o sistema
-- ✅ Validação adequada de dados de entrada
+**Conteúdo:** Projeto de simulado completo implementando conceitos avançados de POO.
 
-### 🧪 **9. Prova – Sistema de Controle WEG 2.0**
-**Localização:** `prova/`
-
-**Descrição:** Aplicação de console para gestão de estoque de equipamentos industriais, com cadastro, consultas, movimentação de estoque e relatórios.
-
-**Principais Funcionalidades:**
-- Cadastro de equipamentos (genérico, `MotorEletrico`, `PainelControle`)
-- Listagem geral e por tipo
-- Busca por código e por nome (contendo)
-- Filtro por preço mínimo
-- Remoção por código
-- Movimentação de estoque (adicionar/retirar) com validação de quantidade
-- Relatórios: quantidade total, maior preço, maior quantidade, estoque baixo
-
-**Arquitetura:**
-- `model/` – `Equipamento` (base), `MotorEletrico` (potência), `PainelControle` (tensão)
-- `service/` – `EstoqueService` (regras de negócio, busca/filtragem/relatórios)
-- `service/exceptions/` – `QuantidadeInsuficiente` (exceção checada)
-- `view/` – `InterfaceUsuario` (menu e interação via console)
-- `main/` – `Main` (ponto de entrada)
-
-**Execução rápida:**
-```bash
-# Compilar todos os projetos (recomendado)
-scripts/compilar_todos.bat
-
-# Executar a Prova a partir da raiz do repositório
-java -cp "prova/bin" br.com.prova.main.Main
+**Estrutura:**
 ```
+src/br/com/simuladoPOO/
+├── model/     # Classes de dados e herança
+├── service/   # Lógica de negócio
+├── view/      # Interface com usuário
+└── main/      # Ponto de entrada
+```
+
+**Conceitos Aplicados:**
+- ✅ Herança e Polimorfismo
+- ✅ Padrão MVC
+- ✅ Tratamento de exceções
+- ✅ Interface com usuário
+- ✅ Organização em pacotes
+
+### ⚠️ **10. Tratamento de Exceções**
+**Localização:** `tratamento excecoes/`
+
+**Conteúdo:** Exercícios práticos sobre tratamento de exceções em Java.
+
+**Exercícios:**
+- **Exercicio1.java** - Tratamento de `NumberFormatException`
+- **Exercicio2.java** - Tratamento de `ArrayIndexOutOfBoundsException`
+- **Exercicio3.java** - Tratamento de `ArithmeticException`
+- **Exercicio4.java** - Tratamento de múltiplas exceções
+
+**Conceitos Aplicados:**
+- ✅ Blocos `try-catch`
+- ✅ Exceções específicas vs genéricas
+- ✅ Tratamento de entrada de dados
+- ✅ Validação de dados
 
 ---
 
@@ -374,6 +339,26 @@ java -cp "prova/bin" br.com.prova.main.Main
 
 ## 🚀 **Como Executar os Projetos**
 
+### **Sistema de Automação Completo**
+
+Este repositório inclui um sistema completo de automação com scripts .bat que facilitam todas as operações:
+
+#### **🎯 Scripts Principais (pasta `scripts/`)**
+- **`menu_principal.bat`** - Menu unificado com todas as opções disponíveis
+- **`compilar_todos.bat`** - Compila automaticamente todos os projetos do repositório
+- **`executar_projeto.bat`** - Executa projetos específicos via menu interativo
+- **`limpar_bin.bat`** - Remove todos os arquivos compilados e diretórios bin
+- **`verificar_java.bat`** - Verifica se o ambiente Java está configurado corretamente
+- **`estatisticas_projeto.bat`** - Gera estatísticas detalhadas em tempo real
+
+#### **✨ Benefícios da Automação**
+- ⚡ **Compilação Universal** - Um comando compila todos os projetos
+- 🎮 **Execução Inteligente** - Menu interativo para escolha de projetos
+- 🧹 **Limpeza Automática** - Remove arquivos temporários automaticamente
+- 🔍 **Verificação de Ambiente** - Checagem automática do Java
+- 📊 **Estatísticas em Tempo Real** - Contagem de arquivos e projetos
+- 🚫 **Tratamento de Erros** - Scripts robustos com verificações
+
 ### **Pré-requisitos**
 - Java JDK 22 ou superior
 - IDE Java (Eclipse, IntelliJ IDEA, VS Code)
@@ -390,16 +375,6 @@ javac -d ../../bin *.java
 # Executar
 java -cp ../../bin br.com.nomeDoProjeto.main.MainUtil
 ```
-
-### **Scripts de Automação**
-- `scripts/menu_principal.bat` - Menu principal com todas as opções
-- `scripts/compilar_todos.bat` - Compila todos os projetos do repositório
-- `scripts/executar_projeto.bat` - Executa projetos específicos via menu interativo
-- `scripts/limpar_bin.bat` - Remove todos os arquivos compilados (.class)
-- `scripts/verificar_java.bat` - Verifica se o ambiente Java está configurado
-- `scripts/estatisticas_projeto.bat` - Gera estatísticas detalhadas do projeto
-- `atividades heranca/teste_compilacao.bat` - Testa compilação dos projetos de herança
-- `projetos/compilar.bat` - Compila projetos CRUD e MVC
 
 ### **Como Usar os Scripts:**
 ```bash
@@ -423,15 +398,6 @@ scripts/limpar_bin.bat
 scripts/estatisticas_projeto.bat
 ```
 
-#### Executar projeto `prova/` manualmente
-```bash
-# Compilar todos (gera `prova/bin`)
-scripts/compilar_todos.bat
-
-# Executar
-java -cp "prova/bin" br.com.prova.main.Main
-```
-
 ### **Estrutura de Compilação**
 ```
 projeto/
@@ -444,14 +410,15 @@ projeto/
 
 ## 📊 **Estatísticas do Repositório**
 
-- **Total de Projetos:** 16+
+- **Total de Projetos:** 15+
 - **Total de Exercícios:** 20+
 - **Linhas de Código:** 2500+
 - **Conceitos Abordados:** 12+
 - **Padrões Implementados:** 4+
 - **Exceções Criadas:** 4 tipos customizados
-- **Scripts de Automação:** 8
-- **Projetos de Avaliação:** 1 (Sistema WEG 2.0)
+- **Scripts de Automação:** 6 (sistema completo)
+- **Projetos de Avaliação:** 1 (Sistema de Hotel)
+- **Sistema de Automação:** Completo e integrado
 
 ---
 
@@ -502,6 +469,4 @@ Este é um projeto educacional desenvolvido durante o curso de Técnicas de Prog
 
 ---
 
-
-*Última atualização: Agosto 2025*
-
+*Última atualização: Agosto 2025* 

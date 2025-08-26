@@ -1,62 +1,37 @@
 @echo off
-echo ========================================
-echo    LIMPADOR DE ARQUIVOS COMPILADOS
-echo ========================================
+echo Limpando arquivos compilados do repositorio...
 echo.
 
-echo Removendo arquivos .class e diretorios bin...
-echo.
+set "DIRETORIOS=atividades heranca atividades polimorfismo atividades static atividades CRUD e MVC desafio jean projetos prova POO simulado POO tratamento excecoes"
+set "TOTAL_REMOVIDOS=0"
 
-if exist "bin" (
-    rmdir /s /q "bin"
-    echo ✓ Diretorio bin removido
-)
+echo Removendo diretorios bin e arquivos .class...
 
-if exist "atividades heranca/bin" (
-    rmdir /s /q "atividades heranca/bin"
-    echo ✓ Bin das atividades de heranca removido
-)
-
-if exist "projetos/bin" (
-    rmdir /s /q "projetos/bin"
-    echo ✓ Bin dos projetos removido
-)
-
-if exist "tratamento excecoes/bin" (
-    rmdir /s /q "tratamento excecoes/bin"
-    echo ✓ Bin do tratamento de excecoes removido
-)
-
-if exist "desafio jean/bin" (
-    rmdir /s /q "desafio jean/bin"
-    echo ✓ Bin do desafio jean removido
-)
-
-if exist "atividades polimorfismo/bin" (
-    rmdir /s /q "atividades polimorfismo/bin"
-    echo ✓ Bin das atividades polimorfismo removido
-)
-
-if exist "atividades CRUD e MVC/bin" (
-    rmdir /s /q "atividades CRUD e MVC/bin"
-    echo ✓ Bin das atividades CRUD e MVC removido
+for %%d in (%DIRETORIOS%) do (
+    if exist "%%d\bin" (
+        echo Removendo: %%d\bin
+        rmdir /s /q "%%d\bin" 2>nul
+        set /a TOTAL_REMOVIDOS+=1
+    )
 )
 
 echo.
-echo Removendo arquivos .class individuais...
-echo.
+echo Removendo arquivos .class soltos...
 
 for /r . %%f in (*.class) do (
-    del "%%f"
-    echo ✓ Removido: %%f
+    echo Removendo: %%f
+    del "%%f" 2>nul
+    set /a TOTAL_REMOVIDOS+=1
 )
 
 echo.
 echo ========================================
-echo    LIMPEZA CONCLUIDA!
+echo LIMPEZA CONCLUIDA
 echo ========================================
+echo Total de itens removidos: %TOTAL_REMOVIDOS%
 echo.
-echo Todos os arquivos compilados foram removidos.
-echo Execute o script de compilacao para recriar os arquivos .class
+echo Todos os arquivos compilados foram removidos!
+echo Para recompilar, use: scripts\compilar_todos.bat
 echo.
+
 pause

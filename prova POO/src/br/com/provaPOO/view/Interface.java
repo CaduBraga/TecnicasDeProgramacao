@@ -4,7 +4,6 @@ import br.com.provaPOO.model.Hospede;
 import br.com.provaPOO.model.Quarto;
 import br.com.provaPOO.model.Reserva;
 import br.com.provaPOO.model.Servico;
-import model.*;
 import br.com.provaPOO.service.HotelService;
 
 import java.time.LocalDate;
@@ -12,13 +11,9 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Camada de visualização (prints, Scanner, menus e submenus),
- * conforme sua preferência de separar exibição da lógica.
- */
 public class Interface {
 
-    private final Scanner sc = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
     private final HotelService service;
 
     public Interface(HotelService service) {
@@ -29,32 +24,10 @@ public class Interface {
         int opcao;
         do {
             try {
-                menuPrincipal();
+                exibirMenuPrincipal();
                 System.out.print("Escolha: ");
-                opcao = Integer.parseInt(sc.nextLine());
-                switch (opcao) {
-                    case 1:
-                        submenuCadastro();
-                        break;
-                    case 2:
-                        submenuListagem();
-                        break;
-                    case 3:
-                        submenuPesquisa();
-                        break;
-                    case 4:
-                        editarHospede();
-                        break;
-                    case 5:
-                        cancelarReserva();
-                        break;
-                    case 0:
-                        System.out.println("Saindo... Até logo!\n");
-                        break;
-                    default:
-                        System.out.println("Opção inválida!\n");
-                        break;
-                }
+                opcao = Integer.parseInt(scanner.nextLine());
+                processarOpcaoMenu(opcao);
             } catch (NumberFormatException e) {
                 System.out.println("Entrada inválida. Digite números quando solicitado.\n");
                 opcao = -1;
@@ -62,7 +35,7 @@ public class Interface {
         } while (opcao != 0);
     }
 
-    private void menuPrincipal() {
+    private void exibirMenuPrincipal() {
         System.out.println("\n==== SISTEMA DE HOTEL ====");
         System.out.println("1) Cadastros");
         System.out.println("2) Listagens");
@@ -72,8 +45,33 @@ public class Interface {
         System.out.println("0) Sair");
     }
 
-    // ─────────────────────────── SUBMENUS ───────────────────────────
-    private void submenuCadastro() {
+    private void processarOpcaoMenu(int opcao) {
+        switch (opcao) {
+            case 1:
+                exibirSubmenuCadastro();
+                break;
+            case 2:
+                exibirSubmenuListagem();
+                break;
+            case 3:
+                exibirSubmenuPesquisa();
+                break;
+            case 4:
+                editarHospede();
+                break;
+            case 5:
+                cancelarReserva();
+                break;
+            case 0:
+                System.out.println("Saindo... Até logo!\n");
+                break;
+            default:
+                System.out.println("Opção inválida!\n");
+                break;
+        }
+    }
+
+    private void exibirSubmenuCadastro() {
         System.out.println("\n-- Cadastro --");
         System.out.println("1) Cadastrar hóspede");
         System.out.println("2) Cadastrar quarto");
@@ -81,8 +79,12 @@ public class Interface {
         System.out.println("4) Adicionar serviço a uma reserva");
         System.out.println("0) Voltar");
         System.out.print("Escolha: ");
-        String op = sc.nextLine();
-        switch (op) {
+        String opcao = scanner.nextLine();
+        processarOpcaoCadastro(opcao);
+    }
+
+    private void processarOpcaoCadastro(String opcao) {
+        switch (opcao) {
             case "1":
                 cadastrarHospede();
                 break;
@@ -103,7 +105,7 @@ public class Interface {
         }
     }
 
-    private void submenuListagem() {
+    private void exibirSubmenuListagem() {
         System.out.println("\n-- Listagem --");
         System.out.println("1) Listar hóspedes");
         System.out.println("2) Listar quartos");
@@ -111,8 +113,12 @@ public class Interface {
         System.out.println("4) Listar tudo (demonstração instanceof)");
         System.out.println("0) Voltar");
         System.out.print("Escolha: ");
-        String op = sc.nextLine();
-        switch (op) {
+        String opcao = scanner.nextLine();
+        processarOpcaoListagem(opcao);
+    }
+
+    private void processarOpcaoListagem(String opcao) {
+        switch (opcao) {
             case "1":
                 listarHospedes();
                 break;
@@ -133,15 +139,19 @@ public class Interface {
         }
     }
 
-    private void submenuPesquisa() {
+    private void exibirSubmenuPesquisa() {
         System.out.println("\n-- Pesquisa --");
         System.out.println("1) Pesquisar hóspede por nome");
         System.out.println("2) Pesquisar quarto por tipo");
         System.out.println("3) Pesquisar reserva por nome do hóspede");
         System.out.println("0) Voltar");
         System.out.print("Escolha: ");
-        String op = sc.nextLine();
-        switch (op) {
+        String opcao = scanner.nextLine();
+        processarOpcaoPesquisa(opcao);
+    }
+
+    private void processarOpcaoPesquisa(String opcao) {
+        switch (opcao) {
             case "1":
                 pesquisarHospedePorNome();
                 break;
@@ -159,18 +169,17 @@ public class Interface {
         }
     }
 
-    // ─────────────────────────── AÇÕES ───────────────────────────
     private void cadastrarHospede() {
         try {
             System.out.print("Nome: ");
-            String nome = sc.nextLine();
+            String nome = scanner.nextLine();
             System.out.print("Documento: ");
-            String doc = sc.nextLine();
+            String documento = scanner.nextLine();
             System.out.print("Telefone: ");
-            String tel = sc.nextLine();
+            String telefone = scanner.nextLine();
 
-            Hospede h = new Hospede(nome, doc, tel);
-            service.cadastrarHospede(h);
+            Hospede hospede = new Hospede(nome, documento, telefone);
+            service.cadastrarHospede(hospede);
             System.out.println("Hóspede cadastrado!\n");
         } catch (Exception e) {
             System.out.println("Erro ao cadastrar hóspede: " + e.getMessage());
@@ -180,14 +189,14 @@ public class Interface {
     private void cadastrarQuarto() {
         try {
             System.out.print("Número do quarto (int): ");
-            int numero = Integer.parseInt(sc.nextLine());
+            int numero = Integer.parseInt(scanner.nextLine());
             System.out.print("Tipo (ex.: Standard/Luxo/Suíte): ");
-            String tipo = sc.nextLine();
+            String tipo = scanner.nextLine();
             System.out.print("Preço da diária (double): ");
-            double preco = Double.parseDouble(sc.nextLine());
+            double preco = Double.parseDouble(scanner.nextLine());
 
-            Quarto q = new Quarto(numero, tipo, preco);
-            service.cadastrarQuarto(q);
+            Quarto quarto = new Quarto(numero, tipo, preco);
+            service.cadastrarQuarto(quarto);
             System.out.println("Quarto cadastrado!\n");
         } catch (NumberFormatException e) {
             System.out.println("Valores numéricos inválidos.\n");
@@ -197,20 +206,20 @@ public class Interface {
     private void cadastrarReserva() {
         try {
             System.out.print("Documento do hóspede: ");
-            String doc = sc.nextLine();
+            String documento = scanner.nextLine();
             System.out.print("Número do quarto: ");
-            int numero = Integer.parseInt(sc.nextLine());
+            int numero = Integer.parseInt(scanner.nextLine());
             System.out.print("Data de entrada (AAAA-MM-DD): ");
-            LocalDate entrada = LocalDate.parse(sc.nextLine());
+            LocalDate dataEntrada = LocalDate.parse(scanner.nextLine());
             System.out.print("Data de saída (AAAA-MM-DD): ");
-            LocalDate saida = LocalDate.parse(sc.nextLine());
+            LocalDate dataSaida = LocalDate.parse(scanner.nextLine());
 
-            Reserva r = service.criarReserva(doc, numero, entrada, saida);
-            if (r == null) {
+            Reserva reserva = service.criarReserva(documento, numero, dataEntrada, dataSaida);
+            if (reserva == null) {
                 System.out.println("Hóspede ou quarto não encontrado. Cadastre-os antes.\n");
                 return;
             }
-            service.cadastrarReserva(r);
+            service.cadastrarReserva(reserva);
             System.out.println("Reserva cadastrada!\n");
         } catch (NumberFormatException e) {
             System.out.println("Número de quarto inválido.\n");
@@ -223,14 +232,14 @@ public class Interface {
         try {
             listarReservas();
             System.out.print("Índice da reserva (conforme listagem): ");
-            int idx = Integer.parseInt(sc.nextLine());
+            int indice = Integer.parseInt(scanner.nextLine());
 
             System.out.print("Nome do serviço: ");
-            String nome = sc.nextLine();
+            String nome = scanner.nextLine();
             System.out.print("Preço do serviço: ");
-            double preco = Double.parseDouble(sc.nextLine());
+            double preco = Double.parseDouble(scanner.nextLine());
 
-            service.adicionarServicoEmReserva(idx, new Servico(nome, preco));
+            service.adicionarServicoEmReserva(indice, new Servico(nome, preco));
             System.out.println("Serviço adicionado!\n");
         } catch (NumberFormatException e) {
             System.out.println("Entrada inválida.\n");
@@ -239,10 +248,12 @@ public class Interface {
 
     private void listarHospedes() {
         List<Hospede> lista = service.listarHospedes();
-        if (lista.isEmpty()) System.out.println("Nenhum hóspede cadastrado.");
-        else {
-            int i = 0; for (Hospede h : lista) {
-                System.out.println("["+ (i++) +"] " + h);
+        if (lista.isEmpty()) {
+            System.out.println("Nenhum hóspede cadastrado.");
+        } else {
+            int indice = 0;
+            for (Hospede hospede : lista) {
+                System.out.println("[" + (indice++) + "] " + hospede);
             }
         }
         System.out.println();
@@ -250,10 +261,12 @@ public class Interface {
 
     private void listarQuartos() {
         List<Quarto> lista = service.listarQuartos();
-        if (lista.isEmpty()) System.out.println("Nenhum quarto cadastrado.");
-        else {
-            int i = 0; for (Quarto q : lista) {
-                System.out.println("["+ (i++) +"] " + q);
+        if (lista.isEmpty()) {
+            System.out.println("Nenhum quarto cadastrado.");
+        } else {
+            int indice = 0;
+            for (Quarto quarto : lista) {
+                System.out.println("[" + (indice++) + "] " + quarto);
             }
         }
         System.out.println();
@@ -261,33 +274,34 @@ public class Interface {
 
     private void listarReservas() {
         List<Reserva> lista = service.listarReservas();
-        if (lista.isEmpty()) System.out.println("Nenhuma reserva cadastrada.");
-        else {
-            int i = 0; for (Reserva r : lista) {
-                System.out.println("["+ (i++) +"] \n" + r + "\n");
+        if (lista.isEmpty()) {
+            System.out.println("Nenhuma reserva cadastrada.");
+        } else {
+            int indice = 0;
+            for (Reserva reserva : lista) {
+                System.out.println("[" + (indice++) + "] \n" + reserva + "\n");
             }
         }
     }
 
-    // Demonstração do uso de instanceof conforme solicitado
     private void listarGenerico() {
-        List<Object> all = service.listarEntidadesGenericas();
-        if (all.isEmpty()) {
+        List<Object> todasEntidades = service.listarEntidadesGenericas();
+        if (todasEntidades.isEmpty()) {
             System.out.println("Nada para listar.\n");
             return;
         }
-        for (Object o : all) {
-            if (o instanceof Hospede) {
-                Hospede h = (Hospede) o;
-                System.out.println("(Hóspede) " + h);
-            } else if (o instanceof Quarto) {
-                Quarto q = (Quarto) o;
-                System.out.println("(Quarto) " + q);
-            } else if (o instanceof Reserva) {
-                Reserva r = (Reserva) o;
-                System.out.println("(Reserva) \n" + r + "\n");
+        for (Object entidade : todasEntidades) {
+            if (entidade instanceof Hospede) {
+                Hospede hospede = (Hospede) entidade;
+                System.out.println("(Hóspede) " + hospede);
+            } else if (entidade instanceof Quarto) {
+                Quarto quarto = (Quarto) entidade;
+                System.out.println("(Quarto) " + quarto);
+            } else if (entidade instanceof Reserva) {
+                Reserva reserva = (Reserva) entidade;
+                System.out.println("(Reserva) \n" + reserva + "\n");
             } else {
-                System.out.println(o);
+                System.out.println(entidade);
             }
         }
         System.out.println();
@@ -295,48 +309,57 @@ public class Interface {
 
     private void pesquisarHospedePorNome() {
         System.out.print("Termo do nome: ");
-        String termo = sc.nextLine();
-        List<Hospede> res = service.pesquisarHospedePorNome(termo);
-        if (res.isEmpty()) System.out.println("Nenhum hóspede encontrado.\n");
-        else res.forEach(h -> System.out.println(h));
+        String termo = scanner.nextLine();
+        List<Hospede> resultados = service.pesquisarHospedePorNome(termo);
+        if (resultados.isEmpty()) {
+            System.out.println("Nenhum hóspede encontrado.\n");
+        } else {
+            resultados.forEach(hospede -> System.out.println(hospede));
+        }
         System.out.println();
     }
 
     private void pesquisarQuartoPorTipo() {
         System.out.print("Tipo (parte do texto): ");
-        String tipo = sc.nextLine();
-        List<Quarto> res = service.pesquisarQuartoPorTipo(tipo);
-        if (res.isEmpty()) System.out.println("Nenhum quarto encontrado.\n");
-        else res.forEach(q -> System.out.println(q));
+        String tipo = scanner.nextLine();
+        List<Quarto> resultados = service.pesquisarQuartoPorTipo(tipo);
+        if (resultados.isEmpty()) {
+            System.out.println("Nenhum quarto encontrado.\n");
+        } else {
+            resultados.forEach(quarto -> System.out.println(quarto));
+        }
         System.out.println();
     }
 
     private void pesquisarReservaPorNomeHospede() {
         System.out.print("Nome do hóspede (parte): ");
-        String nome = sc.nextLine();
-        List<Reserva> res = service.pesquisarReservaPorNomeHospede(nome);
-        if (res.isEmpty()) System.out.println("Nenhuma reserva encontrada.\n");
-        else res.forEach(r -> System.out.println("\n" + r + "\n"));
+        String nome = scanner.nextLine();
+        List<Reserva> resultados = service.pesquisarReservaPorNomeHospede(nome);
+        if (resultados.isEmpty()) {
+            System.out.println("Nenhuma reserva encontrada.\n");
+        } else {
+            resultados.forEach(reserva -> System.out.println("\n" + reserva + "\n"));
+        }
     }
 
     private void editarHospede() {
         System.out.print("Documento do hóspede a editar: ");
-        String doc = sc.nextLine();
+        String documento = scanner.nextLine();
         System.out.print("Novo nome (deixe vazio para manter): ");
-        String nome = sc.nextLine();
+        String nome = scanner.nextLine();
         System.out.print("Novo telefone (deixe vazio para manter): ");
-        String tel = sc.nextLine();
-        boolean ok = service.editarHospede(doc, nome, tel);
-        System.out.println(ok ? "Dados atualizados!\n" : "Hóspede não encontrado.\n");
+        String telefone = scanner.nextLine();
+        boolean sucesso = service.editarHospede(documento, nome, telefone);
+        System.out.println(sucesso ? "Dados atualizados!\n" : "Hóspede não encontrado.\n");
     }
 
     private void cancelarReserva() {
         listarReservas();
         System.out.print("Informe o índice da reserva para cancelar: ");
         try {
-            int idx = Integer.parseInt(sc.nextLine());
-            boolean ok = service.cancelarReserva(idx);
-            System.out.println(ok ? "Reserva cancelada!\n" : "Índice inválido.\n");
+            int indice = Integer.parseInt(scanner.nextLine());
+            boolean sucesso = service.cancelarReserva(indice);
+            System.out.println(sucesso ? "Reserva cancelada!\n" : "Índice inválido.\n");
         } catch (NumberFormatException e) {
             System.out.println("Índice inválido.\n");
         }

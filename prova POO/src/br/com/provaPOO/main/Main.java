@@ -1,10 +1,8 @@
-package br.com.provaPOO.view;
+package br.com.provaPOO.main;
 
 import br.com.provaPOO.service.HotelService;
+import br.com.provaPOO.view.Interface;
 
-/**
- * Classe de inicialização da aplicação.
- */
 public class Main {
     public static void main(String[] args) {
         HotelService service = new HotelService();

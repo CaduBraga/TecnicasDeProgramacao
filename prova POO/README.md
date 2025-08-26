@@ -57,4 +57,4 @@ src/
 - LocalDate para manipulação de datas
 
 ## Autor
-Desenvolvido para a disciplina de Técnicas de Programação - Prova POO
+Desenvolvido por Carlos Eduardo Braga para a disciplina de Técnicas de Programação - Prova POO

@@ -5,6 +5,46 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
+## [1.2.0] - 2024-12-21
+
+### Adicionado
+- **Sistema de Automação Completo**: Scripts .bat para todas as operações do repositório
+  - `scripts/compilar_todos.bat` - Compilação automática de todos os projetos
+  - `scripts/executar_projeto.bat` - Execução interativa de projetos específicos
+  - `scripts/menu_principal.bat` - Menu principal unificado com todas as opções
+  - `scripts/limpar_bin.bat` - Limpeza automática de arquivos compilados
+  - `scripts/verificar_java.bat` - Verificação do ambiente Java
+  - `scripts/estatisticas_projeto.bat` - Geração de estatísticas detalhadas
+- **Scripts Específicos por Projeto**: Automação individual para cada tipo de atividade
+  - `atividades heranca/teste_compilacao.bat` - Teste de compilação dos projetos de herança
+  - `projetos/compilar.bat` - Compilação dos projetos CRUD e MVC
+  - `prova POO/compilar.bat` - Compilação da prova principal
+  - `prova POO/executar.bat` - Execução da prova principal
+- **Documentação Atualizada**: README e CHANGELOG completamente revisados
+  - Seção de scripts de automação detalhada
+  - Instruções de uso para todos os scripts
+  - Estatísticas atualizadas do repositório
+  - Guia de execução passo a passo
+
+### Melhorado
+- **Organização dos Scripts**: Estrutura hierárquica e lógica para scripts de automação
+- **Documentação de Uso**: Instruções claras para cada script e funcionalidade
+- **Padrão de Nomenclatura**: Scripts seguem convenção consistente de nomenclatura
+- **Tratamento de Erros**: Scripts incluem verificações de ambiente e tratamento de erros
+
+### Características da Automação
+- **Compilação Universal** - Script que compila todos os projetos do repositório
+- **Execução Inteligente** - Menu interativo para escolha e execução de projetos
+- **Limpeza Automática** - Remoção de arquivos temporários e compilados
+- **Verificação de Ambiente** - Checagem automática do Java e dependências
+- **Estatísticas em Tempo Real** - Contagem de arquivos, linhas de código e projetos
+
+### Tecnologias
+- Windows Batch Scripts (.bat)
+- Java JDK 22
+- Sistema de automação integrado
+- Verificação automática de ambiente
+
 ## [1.1.0] - 2024-12-20
 
 ### Adicionado
